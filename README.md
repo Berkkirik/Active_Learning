@@ -234,7 +234,6 @@ reg.score(x_train,y_train)
 
 
 
-```
 
                  
 # With never seen data , create conf. matrix
