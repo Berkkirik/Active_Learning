@@ -17,17 +17,13 @@ from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import RandomForestClassifier, VotingClassifier,BaggingClassifier
 from sklearn.svm import SVC
 from sklearn.decomposition import PCA
-
 from sklearn.utils import shuffle
 import numpy as np
 import scipy.fftpack
 import matplotlib.pyplot as plt
 from scipy.stats import skew
-
 import featureExtraction
-
 from scipy import signal
-
 import datetime
 import pickle
 import math
