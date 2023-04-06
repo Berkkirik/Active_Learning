@@ -99,7 +99,8 @@ def create_eigens_with_fft(d_samples):
         d_train.append(eigens)
     return d_train 
     
-    
+
+# PRiNCİPAL COMPONENT ANALYSİS
 def pca(d_samples):
     d_samples_subs1=d_samples[:,:,:3]
     d_samples_subs2=d_samples[:,:,23:26]
