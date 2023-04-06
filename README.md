@@ -4,6 +4,7 @@
 # İmport section
 ## to run the model , you need to install the packages of python
 ### To find the packages or more information about libraries of python, u can visit(https://pypi.org/)
+'''
 import numpy as np
 import warnings
 import os
@@ -27,7 +28,7 @@ import datetime
 import pickle
 import math
 
-
+'''
 #  LABELS 
 ## Classes represent the the classes of data
 '''
