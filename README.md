@@ -88,11 +88,13 @@ plt.plot(d_train[0])
 plt.plot(d_train[0])
 plt.show()
 plt.show()
+```
 
-'''
+
 
 # Feature Extraction Method which we import
 ```
+
 feature_extraction_method_name = "create_eigens_with_fft" # name of the feature extraciton method (can be:
 #feature_extraction_method_name=  "create_eigens"       # "create_eigens", "create_eigens_with_fft", "pca")
 feature_extraction_method = getattr(featureExtraction, feature_extraction_method_name)
@@ -141,7 +143,7 @@ y_train = np.asarray(y_train)
 y_dev=np.asarray(y_dev)
 
 
-###Active Learning    
+# Active Learning    
 #inital parameters
 reg = ExtraTreesClassifier(max_depth=5, n_estimators=20)
 epoch=15
