@@ -208,30 +208,6 @@ for i in range(epoch):
 
 
 
-# from sklearn.feature_selection import SelectKBest, chi2
-# import numpy as np
-# import pandas as pd
-
-# # Assuming x_train is your feature matrix with shape (n_samples, 14) and y_train is the target variable
-# x_train_df = pd.DataFrame(x_train, columns=["feature_"+str(i) for i in range(11)])
-# y_train_df = pd.DataFrame(y_train, columns=["target"])
-
-# # Select the k best features using chi2 test
-# selector = SelectKBest(chi2, k=11)
-# selector.fit(x_train_df, y_train_df)
-# mask = selector.get_support()
-
-# # Extract the selected features using the boolean mask
-# selected_features = x_train_df.columns[mask]
-
-# # Transform the data to keep only the selected features
-# X_new = selector.transform(x_train_df)
-
-# # Train your classifier using the reduced feature matrix
-# clf.fit(X_new, y_train_df)
-
-
-
 
 
 
@@ -247,19 +223,9 @@ pickle.dump(reg, open("./models" + '/' + filename, 'wb'))
 reg.score(x_train,y_train)
 
 
-
+# With never seen data , create conf. matrix
 
 from sklearn.metrics import confusion_matrix
-
-
-
-
-
-
-
-
-
-
 
 y_pred=reg.predict(x_train)
 cm=confusion_matrix(y_pred,y_train)
