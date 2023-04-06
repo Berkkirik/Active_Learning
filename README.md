@@ -231,6 +231,8 @@ pickle.dump(reg, open("./models" + '/' + filename, 'wb'))
 # For Prediction of test data
 '''
 reg.score(x_train,y_train)
+
+
 '''
 
 # With never seen data , create conf. matrix
