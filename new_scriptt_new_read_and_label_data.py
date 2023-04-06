@@ -35,11 +35,11 @@ import math
 labels = ["fall","walking"] #labels (ex => labels = ["loc1","loc2"])
 
 #dataset path
-#folder_name = "data/new_data_labeling/fall_nonfall"
+
 
 all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_All_data" # Path of Data
 
-all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_NS_data" # path of never seen data
+
 
 sample_number = 300  #sample number (ex => sample_number = 480)
 

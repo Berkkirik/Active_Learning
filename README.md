@@ -28,3 +28,49 @@ import pickle
 import math
 
 
+#  LABELS 
+## Classes represent the the classes of data
+"""
+labels = ["fall","walking"] #labels (ex => labels = ["loc1","loc2"])
+"""
+
+# DATASET PATH
+
+"""
+all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_All_data" # Path of Data
+"""
+# Sample Number of Data
+"""
+sample_number = 300  #sample number (ex => sample_number = 480)
+"""
+# Drops and List directory
+"""
+file_list = os.listdir(all_data)
+sample_number = sample_number
+labels = labels
+d_train=[]
+d_trainy=[]
+drops = [0,1,2,3,4,5,32,59,60,61,62,63]
+"""
+
+
+# Try-Except Block to detect the Value Error 
+"""
+for f in file_list:
+    tokens = f.split("_")
+    train_data=None
+    if tokens[3]=="STA1":
+        tokens = f.split("_")
+        try:
+            with open(all_data+"/"+f, 'rb') as f:
+                  train_data=np.load(f)
+                  
+            drops = [0,1,2,3,4,5,32,59,60,61,62,63]
+            train_data=np.delete(train_data,drops,1)
+            if train_data.shape[0]==sample_number:
+                d_trainy.append(labels.index(tokens[0]))
+            d_train.append(train_data)
+        except ValueError:
+            print(f"{f} has 0 size")
+            continue
+"""
