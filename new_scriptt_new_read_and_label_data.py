@@ -82,161 +82,21 @@ print("Line 70 df_train_shape", d_train.shape)
 
 
 
-"""
-wden = getattr(denoise, 'wden')   
 
-denoised_d_train = np.empty(d_train.shape)
-for n in range(d_train.shape[0]):
-    for c in range(d_train.shape[2]):
-        channel = d_train[n][:, c]
-        #dwd2_temp = pywt.dwt(data=channel, wavelet='sym6', mode='symmetric')
-        denoised_temp = wden(channel, tptr = 'heursure', sorh = 'soft', scal = 'one', n = 2, wname = 'sym6' )
-        denoised_d_train[n][:, c] = denoised_temp      
-        #break
-    #break
-#print("denoised_temp.shape", denoised_temp.shape)
-
-#"""
 
 
 plt.plot(d_train[0])
 plt.show()
-# plt.plot(denoised_d_train[0])
+
 plt.show()
 
 
 
-# pca = PCA()
-# pc_d_train = np.empty(denoised_d_train.shape)
-# for i in range(denoised_d_train.shape[0]):
-#     pc_temp = pca.fit_transform(denoised_d_train[i])
-#     pc_d_train[i] = pc_temp
-    
-    
-# plt.plot(pc_d_train[0])
-# plt.show()
-
-
-
-
-
-# # POWER SPECTRAL DENSITY
-# #PSD_d_train = np.array(PSD_d_train)
-# from scipy.signal import welch
-# psd_freqs, psd_d_train = welch(pc_d_train)
-# haart_d_train = []
-# for i in range(psd_d_train.shape[0]):
-#     temp_haart = pywt.wavedec2(psd_d_train[i], 'haar', level=5)
-#     haart_d_train.append(temp_haart)
-# haart_d_train = np.array(haart_d_train)
-
-# plt.title("haart_d_train Detal-5 index-1")
-# plt.plot(haart_d_train[0][5][1])
-# plt.show()
-
-
-
-
-
-# psd_d_train2, psd_energy = [], []
-# for i in range(1125):
-#     temp_psd, energy = compute_psd(pc_d_train[i])
-#     psd_d_train2.append(temp_psd)
-#     psd_energy.append(energy)
-# psd_d_train2, psd_energy = np.array(psd_d_train2), np.array(psd_energy)
-    
-# haart_d_train2 = []
-# for i in range(psd_d_train2.shape[0]):
-#     temp_haart2 = pywt.wavedec2(psd_d_train2[i], 'haar', level=5)
-#     haart_d_train2.append(temp_haart2)
-# haart_d_train2 = np.array(haart_d_train2)
-
-# plt.title("haart_d_train2 Detal-5 index-1")
-# plt.plot(haart_d_train2[0][5][1])
-# plt.show()
-
-
-
-# plt.title("psd2 for first sample")
-# plt.plot(psd_d_train2[0])
-# plt.show()
-# plt.title("energy for all samples")
-# plt.plot(psd_energy)
-# plt.show()
-
-
-# #CENTER OF ENERGY
-# ce_d_train = np.empty((pc_d_train.shape[0], pc_d_train.shape[2]))
-# for i in range(pc_d_train.shape[0]):
-#     for c in range(pc_d_train.shape[2]):
-#         temp_ce = center_of_energy(pc_d_train[i][c])
-#         ce_d_train[i][c] = temp_ce
-
-        
-#  plt.title("c_energy for sample 50")
-#  plt.plot(ce_d_train[50])
-#  plt.show()  
-#  plt.title("c_energy for sample -50")
-#  plt.plot(ce_d_train[-50])
-#  plt.show()  
-
-
-# # TRAINABLE FEATURE EXTRATION
-# # FROM PSD
-# stats_d_train = np.empty((pc_d_train.shape[0],pc_d_train.shape[1], 6))
-# for sample in range(stats_d_train.shape[0]):
-#     for channel in range(stats_d_train.shape[1]):
-#         temp_channel = pc_d_train[sample][:, channel].reshape((-1,1))
-#         print(temp_channel.shape)
-#         break
-#     break
-        
-
-
-
-
-# #convert y to categorical
-# enc = OneHotEncoder(handle_unknown='ignore', sparse=False)
-# enc = enc.fit(train_labels)
-# train_labels = enc.transform(train_labels)
-
-# input_shape = PCS_train[0].shape
-
-# train_data, train_labels = shuffle(PCS_train, train_labels, random_state=0)
-
-# X_train, X_test, y_train, y_test = train_test_split(train_data, train_labels, test_size=0.9, random_state=1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# d_train_pca=d_train[-5]
-# pca = PCA()
-# pca.fit(d_train_pca)
-# d_train_pca = pca.transform(d_train_pca)
-
-
-# transformed1 = np.abs(np.fft.fft(d_train_pca[:,5])) / 100
 
 
 
 feature_extraction_method_name = "create_eigens_with_fft" # name of the feature extraciton method (can be:
 #feature_extraction_method_name=  "create_eigens"       # "create_eigens", "create_eigens_with_fft", "pca")
-# feature_extraction_method_name = "create_eigens" 
-# feature_extraction_method_name = "create_fft" 
 feature_extraction_method = getattr(featureExtraction, feature_extraction_method_name)
  
 
@@ -244,17 +104,10 @@ d_train = feature_extraction_method(d_train)
 
 d_train = np.array(d_train,dtype=float)
 
-#print("Line 98, df_train.shape", d_train.shape)
-
 values, counts = np.unique(d_trainy, return_counts=True)
-
-# print("Line 102 counts", counts)
-# print("Line 103 values", values)
-
 #for imbalance problem
 # d_train=d_train[:2*counts[0]]
 # d_trainy=d_trainy[:2*counts[0]]
-
 
 
 from pyod.models.knn import KNN  # kNN detector
@@ -277,17 +130,12 @@ for i in range(len(d_train)):
     y_data.append(d_trainy[i])
 
 
-
-
-
 x_train, x_dev, y_train, y_dev = train_test_split(x_data, y_data, test_size = 0.2)
 
 x_train=np.asarray(x_train)
 x_dev=np.asarray(x_dev)
 y_train = np.asarray(y_train) 
 y_dev=np.asarray(y_dev)
-
-
 
 
 ###Active Learning    
