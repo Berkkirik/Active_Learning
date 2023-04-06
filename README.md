@@ -230,16 +230,14 @@ reg.score(x_train,y_train)
 
 
 
-
+                 
 # With never seen data , create conf. matrix
 
-```
 from sklearn.metrics import confusion_matrix
-
 y_pred=reg.predict(x_train)
 cm=confusion_matrix(y_pred,y_train)
 print(cm)
-                 
-                 
-                 ```
+
+```
+
 
