@@ -37,16 +37,10 @@ labels = ["fall","walking"] #labels (ex => labels = ["loc1","loc2"])
 #dataset path
 #folder_name = "data/new_data_labeling/fall_nonfall"
 
-all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_All_data"
+all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_All_data" # Path of Data
 
-all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_NS_data"
-# fall_data = "D:\_2023_02_22\Closer07_KüçükOda\Fall"
-# nonfall_data = "D:\_2023_02_22\Closer07_KüçükOda\_Nonfall"
+all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_NS_data" # path of never seen data
 
-# labels = ["inside","nobodynobody"] #labels (ex => labels = ["loc1","loc2"])
-# folder_name = "data/new_data_labeling/inside_nobody" #directory of the data (ex => folder_name = "data/loc1-loc2")
-
-# folder_name = "data/fall_nonfall" 
 sample_number = 300  #sample number (ex => sample_number = 480)
 
 #"""
