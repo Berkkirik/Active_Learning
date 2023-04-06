@@ -2,7 +2,7 @@
 """
 Created on Tue Feb 21 17:15:08 2023
 
-@author: ayhant
+@author: Berk
 """
 import numpy as np
 import warnings
@@ -21,8 +21,6 @@ from sklearn.decomposition import PCA
 from sklearn.utils import shuffle
 import numpy as np
 import scipy.fftpack
-# import denoise
-# from denoise import *
 import matplotlib.pyplot as plt
 from scipy.stats import skew
 
