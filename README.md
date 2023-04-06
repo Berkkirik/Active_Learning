@@ -120,8 +120,12 @@ from pyod.models.knn import KNN  # kNN detector
 clf_name = 'KNN'
 clf = KNN()
 clf.fit(d_train)
+```
+
 # get the prediction label and outlier scores of the training data
-'''
+```
+
+
 x_outliers = clf.labels_  # binary labels (0: inliers, 1: outliers)
 
 count=0
