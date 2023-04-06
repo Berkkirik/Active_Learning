@@ -30,32 +30,38 @@ import math
 
 #  LABELS 
 ## Classes represent the the classes of data
-"""
+'''
+
 labels = ["fall","walking"] #labels (ex => labels = ["loc1","loc2"])
-"""
+'''
+
 
 # DATASET PATH
 
 """
 all_data = "C:\\Users\Berk\Desktop\Bath_Model\Data\_All_data" # Path of Data
-"""
+'''
+
 # Sample Number of Data
-"""
+'''
+
 sample_number = 300  #sample number (ex => sample_number = 480)
-"""
+'''
+
 # Drops and List directory
-"""
+'''
+
 file_list = os.listdir(all_data)
 sample_number = sample_number
 labels = labels
 d_train=[]
 d_trainy=[]
 drops = [0,1,2,3,4,5,32,59,60,61,62,63]
-"""
+'''
 
 
 # Try-Except Block to detect the Value Error 
-"""
+'''
 for f in file_list:
     tokens = f.split("_")
     train_data=None
@@ -73,4 +79,4 @@ for f in file_list:
         except ValueError:
             print(f"{f} has 0 size")
             continue
-"""
+'''

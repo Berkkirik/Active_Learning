@@ -72,7 +72,7 @@ for f in file_list:
             print(f"{f} has 0 size")
             continue
 
-
+# Train set convert to np.asaray
 d_train = np.asarray(d_train,dtype=float)
 d_trainy = np.asarray(d_trainy,dtype=float)
 
@@ -87,7 +87,6 @@ print("Line 70 df_train_shape", d_train.shape)
 
 plt.plot(d_train[0])
 plt.show()
-
 plt.show()
 
 
